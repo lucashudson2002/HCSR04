@@ -1,0 +1,5 @@
+HCSR04		KEYWORD1
+begin		KEYWORD2
+distance_cm	KEYWORD2
+distance_m	KEYWORD2
+distance_in	KEYWORD2
