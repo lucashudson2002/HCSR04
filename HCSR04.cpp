@@ -11,14 +11,17 @@ float HCSR04::distance_cm(){
   delayMicroseconds(10);
   digitalWrite(trig,LOW);
 
-  long unsigned int tempo = pulseIn(echo, HIGH);
-  return 0.01715 * tempo;
+  long unsigned int tempo = pulseIn(echo, HIGH, waiting_time);
+  float distance = 0.01715 * tempo;
+  return distance > 400 ? -1 : distance;
 }
 
 float HCSR04::distance_m(){
-  return distance_cm()/100;
+  float distance = distance_cm();
+  return distance != -1 ? distance_cm()/100 : -1;
 }
 
 float HCSR04::distance_in(){
-  return distance_cm()*0.393701;
+  float distance = distance_cm();
+  return distance != -1 ? distance_cm()*0.393701 : -1;
 }
