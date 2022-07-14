@@ -13,7 +13,7 @@ float HCSR04::distance_cm(){
 
   long unsigned int tempo = pulseIn(echo, HIGH, waiting_time);
   float distance = 0.01715 * tempo;
-  return distance > 400 ? -1 : distance;
+  return distance > 400 || distance == 0 ? -1 : distance;
 }
 
 float HCSR04::distance_m(){
