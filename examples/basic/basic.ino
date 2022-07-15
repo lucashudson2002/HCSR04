@@ -1,16 +1,20 @@
 #include <HCSR04.h>
 
-#define trig A0
-#define echo A1
+#define TRIG 4
+#define ECHO 5
 
-HCSR04 hcsr04(trig, echo);
+//create the object for HCSR04 with the define above
+HCSR04 hcsr04(TRIG, ECHO);
 
 void setup() {
+  //initialize the H-bridge and pinMode them
   hcsr04.begin();
   Serial.begin(9600);
 }
 
 void loop() {
-  Serial.println(hcsr04.distance_cm());
+  //read the distance in centimeters
+  float distance = hcsr04.distance_cm();
+  Serial.println(distance);
   delay(300);
 }
