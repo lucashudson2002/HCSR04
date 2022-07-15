@@ -6,7 +6,7 @@ Arduino library to control the HC-SR04 Ultrasonic Distance Sensor.
 ## Pinout
 - VCC é a alimentação (+5V).
 - TRIG e ECHO são pinos digitais, um de OUTPUT e outro de INPUT.
-- GND é a terre (-).
+- GND é o terra (-).
 
 ## How to use
 - When to instantiate an object, pass the trig and the echo pins to the constructor
